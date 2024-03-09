@@ -19,13 +19,13 @@ def can_turn_off_lights(input_file_path, output_file_path):
 
     Circuits = get_circuits(input_file_path)
 
-
+   
 
 
     Circuits[0].create_clauses()
     Circuits[1].create_clauses()
 
-
+    
 
 
 
@@ -328,9 +328,9 @@ def two_sat_solver(two_cnf_formula):
         else:
             graph.addEdge(double_neg(neg+clause[0]), clause[0])
     if not find_contradiction(strongly_connected_components(graph)):
-        print("Yes")
+        print("yes")
     else:
-        print("No")
+        print("no")
 
 
 
