@@ -4,6 +4,7 @@ from assignment4 import can_turn_off_lights
 def main():
     """ Main program """
 
+    # test medium
     for i in range(2):
         curr = f"test_medium_{i}.txt"
         print(curr)
@@ -19,7 +20,7 @@ def main():
         print(expectedoutput1)
         print(expectedoutput2)
 
-
+    # test small
     for i in range(3):
         curr = f"test_small_{i}.txt"
         print(curr)
