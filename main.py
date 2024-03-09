@@ -20,6 +20,23 @@ def main():
         print(expectedoutput2)
 
 
+    for i in range(3):
+        curr = f"test_small_{i}.txt"
+        print(curr)
+        print("actual:")
+        can_turn_off_lights(f"testfiles/samples_subset/test_small_{i}.txt", "some")
+
+        expectedoutputfile = f"testfiles/samples_subset/test_small_answer_{i}.txt"
+        with open(expectedoutputfile, 'r') as file:
+            expectedoutput1 = file.readline()
+            expectedoutput2 = file.readline()
+        print("")
+        print("expected output:")
+        print(expectedoutput1)
+        print(expectedoutput2)
+
+
+
 
     return 0
 
