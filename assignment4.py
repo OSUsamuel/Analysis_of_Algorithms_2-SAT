@@ -39,7 +39,6 @@ def can_turn_off_lights(input_file_path, output_file_path):
     formula1 = two_cnf()
     formula2 = two_cnf()
 
-    print(Circuits[0].get_lights())
     for l in Circuits[0].get_lights():
         formula1.add_clause(l[0])
         formula1.add_clause(l[1])
