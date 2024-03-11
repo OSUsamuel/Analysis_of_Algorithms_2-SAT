@@ -181,9 +181,9 @@ class circuit():
     def fill_lights(self):
         for i in range(len(self.state)):
             if(self.state[i] == ('0')):
-                self.lights[i] = [["P","Q"], ["~P","~Q"]]
+                self.lights[i] = [["~P","Q"], ["P","~Q"]] 
             else:
-                self.lights[i] = [["~P","Q"], ["P","~Q"]]
+                self.lights[i] = [["P","Q"], ["~P","~Q"]]
     
 
     """
