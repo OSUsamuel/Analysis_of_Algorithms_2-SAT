@@ -30,7 +30,6 @@ def can_turn_off_lights(input_file_path, output_file_path):
 
     #Step 1
     Circuits = get_circuits(input_file_path)
-    print(Circuits[0])
 
     #Step2
     Circuits[0].create_clauses()
@@ -42,6 +41,10 @@ def can_turn_off_lights(input_file_path, output_file_path):
     for l in Circuits[0].get_lights():
         formula1.add_clause(l[0])
         formula1.add_clause(l[1])
+    
+    print(Circuits[0])
+    print("")
+    print(Circuits[1])
             
     result1 = two_sat_solver(formula1)
 
@@ -384,10 +387,10 @@ def two_sat_solver(two_cnf_formula):
         else:
             graph.addEdge(double_neg(neg+clause[0]), clause[0])
     if not find_contradiction(strongly_connected_components(graph)):
-        print("yes")
+        # print("yes")
         return "yes"
     else:
-        print("no")
+        # print("no")
         return "no"
 
 
