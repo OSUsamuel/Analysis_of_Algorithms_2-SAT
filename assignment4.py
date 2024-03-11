@@ -27,14 +27,19 @@ Steps of Code:
 
 '''
 def can_turn_off_lights(input_file_path, output_file_path):
+    
 
-    #Step 1
     Circuits = get_circuits(input_file_path)
-    print(Circuits[0])
 
-    #Step2
+   
+
+
     Circuits[0].create_clauses()
     Circuits[1].create_clauses()
+
+    
+
+
 
     formula1 = two_cnf()
     formula2 = two_cnf()
@@ -43,17 +48,19 @@ def can_turn_off_lights(input_file_path, output_file_path):
         formula1.add_clause(l[0])
         formula1.add_clause(l[1])
             
-    result1 = two_sat_solver(formula1)
+    f1_answer = two_sat_solver(formula1)
 
     for l in Circuits[1].get_lights():
         formula2.add_clause(l[0])
         formula2.add_clause(l[1])
 
-    result2 = two_sat_solver(formula2)
+    f2_answer = two_sat_solver(formula2)
+
+    output = open(output_file_path, "w")
+    output.write(f1_answer + "\n" + f2_answer)
+    output.close()
+
  
-    with open(output_file_path, 'w') as output_file:
-        output_file.write(f"{result1}\n")
-        output_file.write(f"{result2}\n")
 
 
 
@@ -135,6 +142,7 @@ def get_circuits(input_file_path):
         connections.append(connection)
     Circuit2 = circuit(switches, lights, state, connections)
 
+    input_file.close()
     return Circuit1, Circuit2
 
 
@@ -180,10 +188,10 @@ class circuit():
     """
     def fill_lights(self):
         for i in range(len(self.state)):
-            if(self.state[i] == ('0')):
-                self.lights[i] = [["~P","Q"], ["P","~Q"]] 
-            else:
+            if(self.state[i] == ('1')):
                 self.lights[i] = [["P","Q"], ["~P","~Q"]]
+            else:
+                self.lights[i] = [["~P","Q"], ["P","~Q"]]
     
 
     """
@@ -217,7 +225,6 @@ class circuit():
 '''
 ------------------------------------------------------------------------------------------------------------------------
 SAT SOLVER
-credit: https://github.com/arunptl100/SAT-Solver/blob/master/sat-solver.py
 ------------------------------------------------------------------------------------------------------------------------
 '''
             
@@ -384,13 +391,10 @@ def two_sat_solver(two_cnf_formula):
         else:
             graph.addEdge(double_neg(neg+clause[0]), clause[0])
     if not find_contradiction(strongly_connected_components(graph)):
-        print("yes")
-        return "yes"
+        return("yes")
     else:
-        print("no")
-        return "no"
+        return("no")
 
 
 
     
-

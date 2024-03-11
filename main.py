@@ -1,101 +1,40 @@
 
 from assignment4 import can_turn_off_lights
-from time import *
-
 
 def main():
     """ Main program """
 
     for i in range(1,4):
-        curr = f"test{i}.txt"
-        print("__________________________________________")
-        print(curr)
-        start_time = time()
-        can_turn_off_lights(f"testfiles/test{i}.txt", f"testfiles/test{i}_actual_output.txt")
-        print("")
-        print("Ran in " + str(time() - start_time))
-        actualoutputfile = f"testfiles/test{i}_actual_output.txt"
-        with open(actualoutputfile, 'r') as file:
-            actualoutput1 = file.readline()
-            actualoutput2 = file.readline()
-        print("actual output:")
-        print(actualoutput1.strip())
-        print(actualoutput2.strip())     
-        expectedoutputfile = f"testfiles/test{i}_result.txt"
-        with open(expectedoutputfile, 'r') as file:
-            expectedoutput1 = file.readline()
-            expectedoutput2 = file.readline()
-        print("expected output:")
-        print(expectedoutput1.strip())
-        print(expectedoutput2.strip())
-        if ((actualoutput1 == expectedoutput1) and (actualoutput2 == expectedoutput2)):
-            print("output matches exactly.")
-        else:
-            print("!! output content or format incorrect.")
-        print("")
+        can_turn_off_lights(f"testfiles\\samples_subset\\test_{i}.txt", f"testfiles\\answers\\test_{i}.txt")
 
+        correct_answers = open(f"testfiles\\samples_subset\\test_answer_{i}.txt", "r")
+        answers = open(f"testfiles\\answers\\test_{i}.txt", "r")
+        for i in range(2):
+            print(correct_answers.readline().strip('\n') == answers.readline().strip("\n"))
 
-    # test medium
-    for i in range(2):
-        curr = f"test_medium_{i}.txt"
-        print("__________________________________________")
-        print(curr)
-        start_time = time()
-        can_turn_off_lights(f"testfiles/samples_subset/test_medium_{i}.txt", f"testfiles/samples_subset/test_medium_{i}_actual_output.txt")
-        print("")
-        print("Ran in " + str(time() - start_time))
-        actualoutputfile = f"testfiles/samples_subset/test_medium_{i}_actual_output.txt"
-        with open(actualoutputfile, 'r') as file:
-            actualoutput1 = file.readline()
-            actualoutput2 = file.readline()
-        print("actual output:")
-        print(actualoutput1.strip())
-        print(actualoutput2.strip())     
-        expectedoutputfile = f"testfiles/samples_subset/test_medium_answer_{i}.txt"
-        with open(expectedoutputfile, 'r') as file:
-            expectedoutput1 = file.readline()
-            expectedoutput2 = file.readline()
-        print("expected output:")
-        print(expectedoutput1.strip())
-        print(expectedoutput2.strip())
-        if ((actualoutput1 == expectedoutput1) and (actualoutput2 == expectedoutput2)):
-            print("output matches exactly.")
-        else:
-            print("!! output content or format incorrect.")
-        print("")
-
-
-    # test small
     for i in range(3):
-        curr = f"test_small_{i}.txt"
-        print("__________________________________________")
-        print(curr)
-        start_time = time()
-        can_turn_off_lights(f"testfiles/samples_subset/test_small_{i}.txt", f"testfiles/samples_subset/test_small_{i}_actual_output.txt")
-        print("")
-        print("Ran in " + str(time() - start_time))
-        actualoutputfile = f"testfiles/samples_subset/test_small_{i}_actual_output.txt"
-        with open(actualoutputfile, 'r') as file:
-            actualoutput1 = file.readline()
-            actualoutput2 = file.readline()
-        print("actual output:")
-        print(actualoutput1.strip())
-        print(actualoutput2.strip())
-        expectedoutputfile = f"testfiles/samples_subset/test_small_answer_{i}.txt"
-        with open(expectedoutputfile, 'r') as file:
-            expectedoutput1 = file.readline()
-            expectedoutput2 = file.readline()
-        print("expected output:")
-        print(expectedoutput1.strip())
-        print(expectedoutput2.strip())
-        if ((actualoutput1 == expectedoutput1) and (actualoutput2 == expectedoutput2)):
-            print("output matches exactly.")
-        else:
-            print("!! output content or format incorrect.")
-        print("")
+        can_turn_off_lights(f"testfiles\\samples_subset\\test_small_{i}.txt", f"testfiles\\answers\\test_small_{i}.txt")
 
+        correct_answers = open(f"testfiles\\samples_subset\\test_small_answer_{i}.txt", "r")
+        answers = open(f"testfiles\\answers\\test_small_{i}.txt", "r")
+        for i in range(2):
+            print(correct_answers.readline().strip('\n') == answers.readline().strip("\n"))
 
+    for i in range(2):
+        can_turn_off_lights(f"testfiles\\samples_subset\\test_medium_{i}.txt", f"testfiles\\answers\\test_medium_{i}.txt")
+
+        correct_answers = open(f"testfiles\\samples_subset\\test_medium_answer_{i}.txt", "r")
+        answers = open(f"testfiles\\answers\\test_medium_{i}.txt", "r")
+        for i in range(2):
+            print(correct_answers.readline().strip('\n') == answers.readline().strip("\n"))
+
+ 
     return 0
+
+
+
+
+
 
 if __name__ == "__main__":
     main()
