@@ -8,6 +8,7 @@ def main():
 
     for i in range(1,4):
         curr = f"test{i}.txt"
+        print("__________________________________________")
         print(curr)
         start_time = time()
         can_turn_off_lights(f"testfiles/test{i}.txt", f"testfiles/test{i}_actual_output.txt")
@@ -27,12 +28,17 @@ def main():
         print("expected output:")
         print(expectedoutput1.strip())
         print(expectedoutput2.strip())
+        if ((actualoutput1 == expectedoutput1) and (actualoutput2 == expectedoutput2)):
+            print("output matches exactly.")
+        else:
+            print("!! output content or format incorrect.")
         print("")
 
 
     # test medium
     for i in range(2):
         curr = f"test_medium_{i}.txt"
+        print("__________________________________________")
         print(curr)
         start_time = time()
         can_turn_off_lights(f"testfiles/samples_subset/test_medium_{i}.txt", f"testfiles/samples_subset/test_medium_{i}_actual_output.txt")
@@ -52,12 +58,17 @@ def main():
         print("expected output:")
         print(expectedoutput1.strip())
         print(expectedoutput2.strip())
+        if ((actualoutput1 == expectedoutput1) and (actualoutput2 == expectedoutput2)):
+            print("output matches exactly.")
+        else:
+            print("!! output content or format incorrect.")
         print("")
 
 
     # test small
     for i in range(3):
         curr = f"test_small_{i}.txt"
+        print("__________________________________________")
         print(curr)
         start_time = time()
         can_turn_off_lights(f"testfiles/samples_subset/test_small_{i}.txt", f"testfiles/samples_subset/test_small_{i}_actual_output.txt")
@@ -77,6 +88,10 @@ def main():
         print("expected output:")
         print(expectedoutput1.strip())
         print(expectedoutput2.strip())
+        if ((actualoutput1 == expectedoutput1) and (actualoutput2 == expectedoutput2)):
+            print("output matches exactly.")
+        else:
+            print("!! output content or format incorrect.")
         print("")
 
 
