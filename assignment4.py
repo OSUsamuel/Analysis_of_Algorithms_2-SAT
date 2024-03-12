@@ -57,7 +57,7 @@ def can_turn_off_lights(input_file_path, output_file_path):
     f2_answer = two_sat_solver(formula2)
 
     output = open(output_file_path, "w")
-    output.write(f1_answer + "\n" + f2_answer)
+    output.write(f1_answer + "\n" + f2_answer + "\n")
     output.close()
 
  
