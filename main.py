@@ -44,7 +44,7 @@ def main():
 
     print(f"test_bigger")
     start_time = time()
-    can_turn_off_lights(f"testfiles\\samples_subset\\test_bigger.txt", f"testfiles\\answers\\test_medium_{i}.txt")
+    can_turn_off_lights(f"testfiles\\samples_subset\\test_bigger.txt", f"testfiles\\answers\\test_bigger.txt")
     print("Ran in " + str(time() - start_time))
     print("")
 
