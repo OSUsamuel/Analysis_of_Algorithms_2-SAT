@@ -4,7 +4,12 @@
 
 <h2>Description of files: </h2>
 <ul>
-  <strong></strong>
+  <strong>Project_Criteria.pdf: </strong>This is the description provided by our teacher for the assignment</br>
+  <strong>assigment4.py: </strong>This is the code where all the logic is done</br>
+  <strong>main.py: </strong>This is where everything is called, the code that uses assignment4.py</br>
+  <strong>assignment4.pdf: </strong>This was our report for this project, my section was the proof</br>
+  <strong>GenerateTest.py: </strong>We needed a test file large enough to make sure we me the run time requirements</br>
+  <strong>testfiles: </strong>These were the test files we were given to test our program</br>
 </ul>
 
 <h2>Criteria</h2>
