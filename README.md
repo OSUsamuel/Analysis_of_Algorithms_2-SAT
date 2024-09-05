@@ -13,8 +13,7 @@
 </ul>
 
 <h2>Criteria</h2>
-<ol>
-  <li></li>
-</ol>
+  <strong>All criteria can be found in the file Project_Criteria.pdf</strong>
 
-<h2>Learning Outcomes:  </h2>
+
+
